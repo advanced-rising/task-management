@@ -10,8 +10,8 @@ import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UsersRepository extends Repository<User> {
-  constructor(private readonly _dataSource: DataSource) {
-    super(User, _dataSource.createEntityManager());
+  constructor(private readonly dataSource: DataSource) {
+    super(User, dataSource.createEntityManager());
   }
 
   async createUser(authCredentialsDto: AuthCredentialsDto): Promise<void> {
