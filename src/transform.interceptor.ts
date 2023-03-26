@@ -1,0 +1,17 @@
+import {
+  NestInterceptor,
+  ExecutionContext,
+  Injectable,
+  CallHandler,
+} from '@nestjs/common';
+import { plainToInstance } from 'class-transformer';
+import { map } from 'rxjs/operators';
+
+@Injectable()
+export class TransformInterceptor implements NestInterceptor {
+  intercept(context: ExecutionContext, next: CallHandler<any>) {
+    return next
+      .handle()
+      .pipe(map((data) => plainToInstance(data.constructor, data)));
+  }
+}
