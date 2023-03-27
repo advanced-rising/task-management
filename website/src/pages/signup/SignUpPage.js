@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Button, TextField } from '@material-ui/core';
 import styled from 'styled-components';
 
-import './SignUpPage.scss';
 import { inject } from 'mobx-react';
 import ErrorMessage from '../../components/ErrorMessage';
 
@@ -49,7 +48,7 @@ class SignUpPage extends Component {
     const { errorMessage } = this.state;
 
     return (
-      <div className="fullscreen-wrapper">
+      <div className='fullscreen-wrapper'>
         <FormContainer>
           <Heading>Join us!</Heading>
           <p>Start managing tasks easily.</p>
@@ -58,33 +57,35 @@ class SignUpPage extends Component {
 
           <div>
             <FormField
-              id="outlined-name"
-              label="Username"
-              margin="dense"
-              variant="outlined"
-              onChange={e => this.setState({ username: e.target.value })}
+              id='outlined-name'
+              label='Username'
+              margin='dense'
+              variant='outlined'
+              onChange={(e) => this.setState({ username: e.target.value })}
             />
           </div>
           <div>
             <FormField
-              id="outlined-name"
-              label="Password"
-              margin="dense"
-              variant="outlined"
-              type="password"
-              onChange={e => this.setState({ password: e.target.value })}
+              id='outlined-name'
+              label='Password'
+              margin='dense'
+              variant='outlined'
+              type='password'
+              onChange={(e) => this.setState({ password: e.target.value })}
             />
           </div>
           <p>
-            Passwords must contain at least 1 upper case letter, 1 lower case letter and one number OR special charracter.
+            Passwords must contain at least 1 upper case letter, 1 lower case letter and one number
+            OR special charracter.
           </p>
-          <hr/>
+          <hr />
           <div>
             <Button
               fullWidth
-              variant="contained"
-              color="primary"
+              variant='contained'
+              color='primary'
               onClick={this.submit}
+              type='submit'
             >
               SIGN UP
             </Button>
